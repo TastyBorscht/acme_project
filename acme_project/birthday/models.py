@@ -20,10 +20,8 @@ class Birthday(models.Model):
     )
 
     class Meta:
-        ...
-
-        def get_absolute_url(self):
-            return reverse('birthday:detail', kwargs={'pk': self.pk})
-
         def __str__(self):
             return self.first_name
+
+    def get_absolute_url(self):
+        return reverse('birthday:detail', kwargs={'pk': self.pk})
